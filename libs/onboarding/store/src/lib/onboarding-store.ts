@@ -1,4 +1,4 @@
-import create from 'zustand';
+import { create } from 'zustand';
 
 export interface StepAData {
   fullName: string;
@@ -45,6 +45,7 @@ export const useOnboardingStore = create<
     ) => void;
     onNext: () => void;
     onBack: () => void;
+    onBackToForm: () => void;
     onComplete: () => void;
   }
 >((set, get) => ({
@@ -67,6 +68,9 @@ export const useOnboardingStore = create<
     if (prevStep >= 0) {
       set({ activeStep: prevStep });
     }
+  },
+  onBackToForm: () => {
+    set({ showConfirm: false, activeStep: 2 });
   },
   onComplete: () => {
     set({ showSuccess: true });
