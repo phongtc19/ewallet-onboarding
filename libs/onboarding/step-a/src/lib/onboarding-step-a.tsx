@@ -60,6 +60,7 @@ export function OnboardingStepA() {
           render={({ field }) => (
             <TextField
               {...field}
+              type="number"
               label="ID Number"
               error={!!errors.idNumber}
               helperText={errors.idNumber?.message}

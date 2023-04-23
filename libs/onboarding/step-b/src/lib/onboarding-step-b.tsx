@@ -82,6 +82,10 @@ export function OnboardingStepB() {
               InputLabelProps={{
                 shrink: true,
               }}
+              inputProps={{
+                max: '9999-12-31',
+                min: '1900-01-01',
+              }}
               error={!!errors.dateOfBirth}
               helperText={errors.dateOfBirth?.message}
             />
